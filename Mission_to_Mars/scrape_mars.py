@@ -10,7 +10,9 @@ import pandas as pd
 def init_browser(): 
     executable_path = {'executable_path': ChromeDriverManager().install()}
     #executable_path = {"executable_path": "/usr/local/bin/chromedriver"}
-    browser = Browser('chrome', **executable_path, headless=False)
+    return Browser('chrome', **executable_path, headless=False)
+
+    # browser = Browser('chrome', **executable_path, headless=False)
 
 def scrape():
     browser = init_browser()
@@ -116,3 +118,16 @@ def scrape():
         except AttributeError as e:
             print(e)
 
+    mars_mission = {
+        "news_title": news_title,
+        "news_p": news_p,
+        "img_url": img_url,
+        "html_table": html_table,
+        "mars_dict": mars_dict
+    }
+
+    # Close the browser after scraping
+    browser.quit()
+
+    # Return results
+    return mars_mission
