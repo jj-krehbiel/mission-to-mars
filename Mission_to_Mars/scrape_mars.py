@@ -123,7 +123,7 @@ def scrape():
         "news_p": news_p,
         "img_url": img_url,
         "html_table": html_table,
-        "mars_dict": mars_dict
+        "mars_hemispheres": mars_hemispheres
     }
 
     # Close the browser after scraping
